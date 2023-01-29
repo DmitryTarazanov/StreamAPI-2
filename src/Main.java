@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Несовершеннолетних: " + underage);
 
         List<String> recruit = persons.stream()
-                .filter(s -> s.getAge() >= 18 && s.getAge() <= 27 && s.getSex() == Sex.MAN)
+                .filter(s -> s.getAge() >= 18 && s.getAge() < 27 && s.getSex() == Sex.MAN)
                 .map(Person::getFamily)
                 .collect(Collectors.toList());
         System.out.println("Подлежащие призыву: " + recruit);
